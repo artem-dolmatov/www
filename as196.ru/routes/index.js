@@ -75,11 +75,7 @@ router.post('/', function(req, res){
 });
 
 router.get('/pdd', function(req, res){
-  res.render('pdd/index');
-});
-
-router.get('/contact', function(req, res){
-  res.render('contact');
+  res.render('pdd/index', { title: 'Экзамен ПДД Онлайн' });
 });
 
 module.exports = router;

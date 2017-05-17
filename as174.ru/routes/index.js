@@ -36,7 +36,7 @@ router.route('/')
                       //HTML response will render the index.jade file in the views/blobs folder. We are also setting "blobs" to be an accessible variable in our jade view
                     html: function(){
                         res.render('index', {
-                              title: 'Автошколы Екатеринбурга',
+                              title: 'Автошколы Челябинска',
                               "schools" : schools
                           });
                     },
@@ -75,11 +75,7 @@ router.post('/', function(req, res){
 });
 
 router.get('/pdd', function(req, res){
-  res.render('pdd/index');
-});
-
-router.get('/contact', function(req, res){
-  res.render('contact');
+  res.render('pdd/index', { title: 'Экзамен ПДД Онлайн' });
 });
 
 module.exports = router;
