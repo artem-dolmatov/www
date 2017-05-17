@@ -7,12 +7,12 @@ block header
 block content
   .row   
     .col.l3.s12
-      p Автошколы Екатеринбурга
+      p.center Автошколы Екатеринбурга
       .row
       each school, i in schools.slice(0,5)    
-        .col.l1
+        .col.l1.s1
           =school.number
-        .col.l11
+        .col.l11.s11
           =school.name
           a.secondary-content(href='schools/' + school._id)
             i.material-icons send  

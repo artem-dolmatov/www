@@ -85,13 +85,14 @@ form p:last-child {
 
 [type="checkbox"] + label {
   position: relative;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding-left: 9px;
+  padding-right: 9px;
   margin: 0px 3px 3px 0px;
   cursor: pointer;
   display: inline-block;
-  height: 25px;
+  height: 33px;
   line-height: 25px;
+  padding-top: 5px;
   font-size: 1rem;
   -webkit-user-select: none;
   /* webkit (safari, chrome) browsers */
