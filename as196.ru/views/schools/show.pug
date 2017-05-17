@@ -1,9 +1,7 @@
 extends ../layout
 
 block nav
-  include ../include/nav
-block header
-  include ../include/header  
+  include ../include/nav 
 block content
     .row
       .col.l10.s12
@@ -19,7 +17,7 @@ block content
             a(href='#main') Главная
           li.tab.col.s3
             a(href='#description') Описание
-      .col.s12#main
+      .col.l12#main
         .row
           .col.l3            
             .img-logo
@@ -48,8 +46,14 @@ block content
               p #{school.adress17}  
               p #{school.adress18}  
               p #{school.adress19}  
-              p #{school.adress20}  
-      .col.l10.s12#description
-        p #{school.description}              
+              p #{school.adress20}              
+          .col.l3.s12
+            include ../include/banner    
+      .col.l12#description
+        .row
+          .col.l9
+            p #{school.description}            
+          .col.l3
+            include ../include/banner                  
 block footer
   include ../include/footer  
