@@ -274,3 +274,7 @@ form p:last-child {
   background-color: #BDBDBD;
   border-color: #BDBDBD;
 }
+/*School page*/
+.collection a.collection-item {
+  color: #039be5;
+}
