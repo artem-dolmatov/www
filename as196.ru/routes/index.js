@@ -68,7 +68,7 @@ router.post('/', function(req, res){
   mailgun.messages().send(data, function (error, body) {
     console.log(body);
     if(!error)
-      res.send("Mail Sent");
+        res.render('thank', { title: 'Спасибо за заявку'})
     else
       res.send("Mail not sent")
   });
@@ -76,6 +76,14 @@ router.post('/', function(req, res){
 
 router.get('/pdd', function(req, res){
   res.render('pdd/index', { title: 'Экзамен ПДД Онлайн' });
+});
+
+router.get('/thank', function(req, res){
+  res.render('thank', { title: 'Спасибо за заявку'})
+})
+
+router.get('/contact', function(req, res){
+  res.render('contact', { title: 'Форма заявки' });
 });
 
 module.exports = router;

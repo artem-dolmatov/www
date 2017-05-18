@@ -21,11 +21,13 @@ block content
         .row
           .col.l3            
             .img-logo
-              img(src='../images/logo/' + school._id + '.png' alt="Logo")
-          .col.l6.s12
-            .adress-div
-              p.spravka Единая Справочная: 
+              h5 
+                | Единая Справочная:
+                br
+                br 
                 a(href='tel:+7(932)321-26-94') +7(932)321-26-94
+          .col.l6.s12
+            .adress-div              
               p Адреса:  
               p #{school.adress1}  
               p #{school.adress2}  

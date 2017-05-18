@@ -279,3 +279,21 @@ form p:last-child {
 .collection a.collection-item {
   color: #039be5;
 }
+::-webkit-input-placeholder{color:rgba(0, 0, 0, 0.71)}
+:-moz-placeholder{color:rgba(0, 0, 0, 0.71)}
+::-moz-placeholder{color:rgba(0, 0, 0, 0.71)}
+:-ms-input-placeholder{color:#rgba(0, 0, 0, 0.71)}
+
+/*Hide all except first fieldset*/
+  #contactform fieldset:not(:first-of-type) {
+  	display: none;
+}
+fieldset {
+  border: 0px solid #c0c0c0;
+}
+/*Thank You*/
+.thank {
+  padding: 7% 0 7% 0;
+  background: linear-gradient(rgba(129, 230, 247, 0.78), rgba(15, 174, 234, 0.75));
+  margin-bottom: 0;
+}

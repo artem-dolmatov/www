@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var $ = jQuery = require("jquery");
 
 var db = require('./model/db');
 var blobs = require('./model/blobs');
@@ -16,7 +17,7 @@ var app = express();
 
 //Раскоментировать на сервере
 var listener = app.listen(8080, function(){
-  console.log('Listering on port ' + listener.address().port); //Listering on port 
+  console.log('Listering on port ' + listener.address().port); //Listering on port
 });
 
 // view engine setup

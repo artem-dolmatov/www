@@ -4,79 +4,137 @@
       div.head-text.center
         h4.
           Подберем автошколу в удобном месте по лучшей цене!
-  .row        
+  .row
     .col.l6
     .col.l5.s12
-      form#contactform.form-head(action="/" method="POST" role='form')
-        .row
-          .col.l12.center
-            span Расчет стоимости обучения
-        .row
-          .col.s3
-            p Категория
-          .col.s9
-            input#A.filled-in(type='checkbox' value='A' name='a') 
-            label(for='A')
-              span.span-btn A
-            input#B.filled-in(type='checkbox' value='B' name='b') 
-            label(for='B')
-              span.span-btn B
-            input#C.filled-in(type='checkbox' value='C' name='c') 
-            label(for='C')
-              span.span-btn C
-            input#D.filled-in(type='checkbox' value='D' name='d') 
-            label(for='D')
-              span.span-btn D
-            input#E.filled-in(type='checkbox' value='E' name='e') 
-            label(for='E')
-              span.span-btn E  
-        .row
-          .col.s3
-            p Район
-          .col.s9
-            input#center.filled-in(type='checkbox' value='Центр' name='center') 
-            label(for='center')
-              span.span-btn Центр
-            input#viz.filled-in(type='checkbox' value='ВИЗ' name='viz') 
-            label(for='viz')
-              span.span-btn ВИЗ
-            input#uralmash.filled-in(type='checkbox' value='Уралмаш' name='uralmash') 
-            label(for='uralmash')
-              span.span-btn Уралмаш
-            input#sort.filled-in(type='checkbox' value='ст. Сортировка' name='sort') 
-            label(for='sort')
-              span.span-btn ст. Сортировка
-            input#kirov.filled-in(type='checkbox' value='Кировский' name='kirov') 
-            label(for='kirov')
-              span.span-btn Кировский
-            input#chkalov.filled-in(type='checkbox' value='Чкаловский' name='chkalov') 
-            label(for='chkalov')
-              span.span-btn Чкаловский    
-        .row
-          .col.s3
-            p Тип Обучения
-          .col.s9
-            input#online.filled-in(type='checkbox' value='Онлайн' name='online') 
-            label(for='online')
-              span.span-btn Онлайн
-            input#group.filled-in(type='checkbox' value='Стандартное' name='group') 
-            label(for='group')
-              span.span-btn Стандартное    
-        .row
-          .col.s3
-            p Тип Трансмиссии
-          .col.s9
-            input#mkpp.filled-in(type='checkbox' value='Механическая' name='mkpp') 
-            label(for='mkpp')
-              span.span-btn Механическая
-            input#akpp.filled-in(type='checkbox' value='Автоматическая' name='akpp') 
-            label(for='akpp')
-              span.span-btn Автоматическая
-        .row
-          .col.s3
-            p Номер телефона
-          .col.s9
-            input(type='text' name='phone')
-        .row
-          .col.s12.center
-            button.waves-effect.waves-light.btn.blue(type='submit') Рассчитать                 
+      form#contactform.form-head(action="/" method="POST" role='form' onsubmit="return (ValidPhone())")
+        fieldset
+          .row.center
+            .col.l12
+              span Расчет стоимости обучения
+          .row
+            .col.s3
+              p Категория
+            .col.s9
+              input#A.filled-in(type='checkbox' value='A' name='a')
+              label(for='A')
+                span.span-btn A
+              input#B.filled-in(type='checkbox' value='B' name='b')
+              label(for='B')
+                span.span-btn B
+              input#C.filled-in(type='checkbox' value='C' name='c')
+              label(for='C')
+                span.span-btn C
+              input#D.filled-in(type='checkbox' value='D' name='d')
+              label(for='D')
+                span.span-btn D
+              input#E.filled-in(type='checkbox' value='E' name='e')
+              label(for='E')
+                span.span-btn E
+          .row
+            .col.s3
+              p Район
+            .col.s9
+              input#center.filled-in(type='checkbox' value='Центр' name='center')
+              label(for='center')
+                span.span-btn Центр
+              input#viz.filled-in(type='checkbox' value='ВИЗ' name='viz')
+              label(for='viz')
+                span.span-btn ВИЗ
+              input#uralmash.filled-in(type='checkbox' value='Уралмаш' name='uralmash')
+              label(for='uralmash')
+                span.span-btn Уралмаш
+              input#sort.filled-in(type='checkbox' value='ст. Сортировка' name='sort')
+              label(for='sort')
+                span.span-btn ст. Сортировка
+              input#kirov.filled-in(type='checkbox' value='Кировский' name='kirov')
+              label(for='kirov')
+                span.span-btn Кировский
+              input#chkalov.filled-in(type='checkbox' value='Чкаловский' name='chkalov')
+              label(for='chkalov')
+                span.span-btn Чкаловский
+          .row
+            .col.s3
+              p Тип Обучения
+            .col.s9
+              input#online.filled-in(type='checkbox' value='Онлайн' name='online')
+              label(for='online')
+                span.span-btn Онлайн
+              input#group.filled-in(type='checkbox' value='Стандартное' name='group')
+              label(for='group')
+                span.span-btn Стандартное
+          .row
+            .col.s3
+              p Тип Трансмиссии
+            .col.s9
+              input#mkpp.filled-in(type='checkbox' value='Механическая' name='mkpp')
+              label(for='mkpp')
+                span.span-btn Механическая
+              input#akpp.filled-in(type='checkbox' value='Автоматическая' name='akpp')
+              label(for='akpp')
+                span.span-btn Автоматическая
+          .row.center
+            input.next.waves-light.btn.blue(type='button', name='next', value='Расчитать')
+        fieldset.center
+          .row
+            h4.
+              Расчет выполнен!
+          .row
+            .col.offset-l1.l10.s12
+              input#phone(type='text' name='phone' placeholder='Введите Ваш номер телефона')
+              p#message
+              button.waves-effect.waves-light.btn.blue(type='submit') Отправить
+script(type='text/javascript').
+  jQuery(function($){
+  $("#phone").mask("8(999) 999-9999");
+  });
+
+  function ValidPhone() {
+    var re = /^\d[\d\(\)\ -]{4,14}\d$/;
+    var myPhone = document.getElementById('phone').value;
+    var valid = re.test(myPhone);
+    if (valid) output = '';
+    else output = 'Пожалуйста введите правильный номер телефона!';
+    document.getElementById('message').innerHTML = document.getElementById('message').innerHTML+'<br />'+output;
+    return valid;
+  }
+
+  //jQuery time
+  var current_fs, next_fs; //fieldsets
+  var left, opacity, scale; //fieldset properties which we will animate
+  var animating; //flag to prevent quick multi-click glitches
+
+  $(".next").click(function(){
+    if(animating) return false;
+    animating = true;
+
+    current_fs = $(this).parent().parent();
+    next_fs = $(this).parent().parent().next();
+
+    //activate next step on progressbar using the index of next_fs
+    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+
+    //show the next fieldset
+    next_fs.show();
+    //hide the current fieldset with style
+    current_fs.animate({opacity: 0}, {
+      step: function(now, mx) {
+        current_fs.css({
+          'transform': 'scale('+scale+')',
+          'position': 'absolute'
+        });
+        next_fs.css({'left': left, 'opacity': opacity});
+      },
+      duration: 10,
+      complete: function(){
+        current_fs.hide();
+        animating = false;
+      },
+      //this comes from the custom easing plugin
+      easing: 'easeInOutBack'
+    });
+  });
+
+  $(".submit").click(function(){
+    return false;
+  })
