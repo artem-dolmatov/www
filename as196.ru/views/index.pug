@@ -7,16 +7,31 @@ block header
 block content
   .row   
     .col.l3.s12
-      p.center Автошколы Екатеринбурга
-      .row
-      each school, i in schools.slice(0,5)    
-        .col.l1.s1
-          =school.number
-        .col.l11.s11
-          =school.name
-          a.secondary-content(href='schools/' + school._id)
-            i.material-icons send  
-      a(href='/schools') все автошколы
+      .card
+        .card-image
+          img(src='/images/top.jpg') 
+        .card-content.card-pad
+        each school, i in schools.slice(0,5)  
+          .row.shadow-box                
+            .col.l1.s1
+              =school.number
+            .col.l11.s11
+              =school.name
+              a.secondary-content(href='schools/' + school._id)
+                i.material-icons send
+        .card-action
+          a(href='/schools') Все автошколы... 
+      //- p.center Автошколы Екатеринбурга
+      //- .row
+      //- each school, i in schools.slice(0,5)    
+      //-   .col.l1.s1
+      //-     =school.number
+      //-   .col.l11.s11
+      //-     =school.name
+      //-     a.secondary-content(href='schools/' + school._id)
+      //-       i.material-icons send
+      //- .row.center        
+      //-   a(href='/schools') все автошколы
     .col.l6.s12
       h4.
         Автошколы Екатеринбурга

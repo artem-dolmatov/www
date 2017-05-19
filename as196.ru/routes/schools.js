@@ -43,58 +43,6 @@ router.route('/')
               }
         });
     })
-    //POST a new blob
-    .post(function(req, res) {
-        // Get values from POST request. These can be done through forms or REST calls. These rely on the "name" attributes for forms
-        var _id = req.body._id;
-        var name = req.body.name;
-        var number = req.body.number;
-        var category = req.body.category;
-        var description = req.body.description;
-        var adress1 = req.body.adress1;
-        var adress2 = req.body.adress2;
-        var adress3 = req.body.adress3;
-        var adress4 = req.body.adress4;
-        var adress5 = req.body.adress5;
-        //call the create function for our database
-        mongoose.model('School').create({
-            _id : _id,
-            name : name,
-            number : number,
-            category : category,
-            description : description,
-            adress1 : adress1,
-            adress2 : adress2,
-            adress3 : adress3,
-            adress4 : adress4,
-            adress5 : adress5
-        }, function (err, school) {
-              if (err) {
-                  res.send("There was a problem adding the information to the database.");
-              } else {
-                  //School has been created
-                  console.log('POST creating new blob: ' + school);
-                  res.format({
-                      //HTML response will set the location and redirect back to the home page. You could also create a 'success' page if that's your thing
-                    html: function(){
-                        // If it worked, set the header so the address bar doesn't still say /adduser
-                        res.location("admin");
-                        // And forward to success page
-                        res.redirect("/admin");
-                    },
-                    //JSON response will show the newly created blob
-                    json: function(){
-                        res.json(school);
-                    }
-                });
-              }
-        })
-    });
-
-/* GET New School page. */
-router.get('/new', function(req, res) {
-    res.render('admin/new', { title: 'Добавить Автошколу' });
-});
 
 // route middleware to validate :id
 router.param('id', function(req, res, next, id) {
@@ -137,6 +85,7 @@ router.route('/:id')
         res.format({
           html: function(){
               res.render('schools/show', {
+                title: 'Автошкола ' + school.name,
                 "school" : school
               });
           },
@@ -147,107 +96,5 @@ router.route('/:id')
       }
     });
   });
-
-router.route('/:id/edit')
-	//GET the individual blob by Mongo ID
-	.get(function(req, res) {
-	    //search for the blob within Mongo
-	    mongoose.model('School').findById(req.id, function (err, school) {
-	        if (err) {
-	            console.log('GET Error: There was a problem retrieving: ' + err);
-	        } else {
-	            //Return the blob
-	            console.log('GET Retrieving ID: ' + school._id);
-	            res.format({
-	                //HTML response will render the 'edit.jade' template
-	                html: function(){
-	                       res.render('admin/edit', {
-	                          title: 'School' + school._id,
-	                          "school" : school
-	                      });
-	                 },
-	                 //JSON response will return the JSON output
-	                json: function(){
-	                       res.json(school);
-	                 }
-	            });
-	        }
-	    });
-	})
-	//PUT to update a blob by ID
-	.put(function(req, res) {
-	    // Get our REST or form values. These rely on the "name" attributes
-	    var name = req.body.name;
-      var number = req.body.number;
-      var category = req.body.category;
-      var description = req.body.description;
-      var adress1 = req.body.adress1;
-      var adress2 = req.body.adress2;
-      var adress3 = req.body.adress3;
-      var adress4 = req.body.adress4;
-      var adress5 = req.body.adress5;
-	    //find the document by ID
-	    mongoose.model('School').findById(req.id, function (err, school) {
-	        //update it
-	        school.update({
-	            name : name,
-              number :  number,
-              category : category,
-              description : description,
-              adress1 : adress1,
-              adress2 : adress2,
-              adress3 : adress3,
-              adress4 : adress4,
-              adress5 : adress5
-	        }, function (err, schoolID) {
-	          if (err) {
-	              res.send("There was a problem updating the information to the database: " + err);
-	          }
-	          else {
-	                  //HTML responds by going back to the page or you can be fancy and create a new view that shows a success page.
-	                  res.format({
-	                      html: function(){
-	                           res.redirect("/admin/" + school._id);
-	                     },
-	                     //JSON responds showing the updated values
-	                    json: function(){
-	                           res.json(school);
-	                     }
-	                  });
-	           }
-	        })
-	    });
-	})
-	//DELETE a School by ID
-	.delete(function (req, res){
-	    //find blob by ID
-	    mongoose.model('School').findById(req.id, function (err, school) {
-	        if (err) {
-	            return console.error(err);
-	        } else {
-	            //remove it from Mongo
-	            school.remove(function (err, school) {
-	                if (err) {
-	                    return console.error(err);
-	                } else {
-	                    //Returning success messages saying it was deleted
-	                    console.log('DELETE removing ID: ' + school._id);
-	                    res.format({
-	                        //HTML returns us back to the main page, or you can create a success page
-	                          html: function(){
-	                               res.redirect("/admin");
-	                         },
-	                         //JSON returns the item with the message that is has been deleted
-	                        json: function(){
-	                               res.json({message : 'deleted',
-	                                   item : school
-	                               });
-	                         }
-	                      });
-	                }
-	            });
-	        }
-	    });
-	});
 
 module.exports = router;
