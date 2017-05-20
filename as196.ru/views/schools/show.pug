@@ -3,32 +3,33 @@ extends ../layout
 block nav
   include ../include/nav 
 block content
-    .row
-      .col.l10.s12
-        a(href='/') Автошколы Екатеринбурга &#8594; Автошкола - #{school.number}) #{school.name}
-    .row
-      .col.l10.s12        
-        h4.
-          Автошкола #{school.number}) #{school.name}
-    .row
-      .col.l10.s12
-        ul.tabs
-          li.tab.col.s3
-            a(href='#main') Главная
-          li.tab.col.s3
-            a(href='#description') Описание
-      .col.l12#main
-        .row
-          .col.l3            
-            .img-logo
-              h5 
-                | Единая Справочная:
-                br
-                br 
-                a(href='tel:+7(932)321-26-94') +7(932)321-26-94
-          .col.l6.s12
-            .adress-div              
-              p Адреса:  
+  .row.bord
+    .col.l10.s12        
+      h4.
+        Автошкола #{school.number}) #{school.name}
+  .row
+    .col.l10.s12
+      ul.tabs
+        li.tab.col.s3
+          a(href='#main') Главная
+        li.tab.col.s3
+          a(href='#description') Описание
+    .col.l12#main
+      .row
+        .col.l3
+          .card
+            .card-image
+              img(src='/images/logo/' + school._id + '.jpg', alt="Логотип")
+            .card-action.center 
+              h5.
+                Единая справочная сайта 
+              a.phone(href='tel:+7(932)321-58-21') +7(932)321-58-21
+        .col.l6.s12
+          .card
+            .card-title.center.adress
+              h5.
+                Адреса:
+            .card-action
               p #{school.adress1}  
               p #{school.adress2}  
               p #{school.adress3}  
@@ -49,13 +50,15 @@ block content
               p #{school.adress18}  
               p #{school.adress19}  
               p #{school.adress20}              
-          .col.l3.s12
-            include ../include/banner    
-      .col.l12#description
-        .row
-          .col.l9
-            p #{school.description}            
-          .col.l3
-            include ../include/banner                  
+        .col.l3.s12
+          include ../include/banner    
+    .col.l12#description
+      .row
+        .col.l9
+          .card
+            .card-content
+              p #{school.description}            
+        .col.l3
+          include ../include/banner                  
 block footer
   include ../include/footer  

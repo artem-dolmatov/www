@@ -46,16 +46,6 @@
   margin: 0% 0.5% -1% 0.5%;
 }
 
-/*Show School*/
-.img-logo {
-  margin: 6% 1% 0% 1%;
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-  text-align: center;
-}
-.adress-div {
-  box-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-  padding: 0% 0% 1% 5%;
-}
 .box-check {
   border: 1px solid;
 }
@@ -306,4 +296,14 @@ fieldset {
 }
 .secondary-content {
   color: #2196F3;
+}
+.phone {
+  font-size: 23px;
+}
+.adress {
+  padding-top: 1px;
+}
+.bord {
+  width: 98%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.20);
 }

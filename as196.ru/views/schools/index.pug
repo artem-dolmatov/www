@@ -3,19 +3,19 @@ extends ../layout
 block nav
   include ../include/nav
 block content
-  .row
+  .row.bord
     .col.l12.center
       h5.
         Все Автошколы Екатеринбурга в одном месте
   .row      
-    .col.l7.offset-l1.s12    
+    .col.l8.s12    
       .collection
         each school, i in schools      
           a.collection-item(href='schools/' + school._id)
             =school.number
             | . 
             =school.name
-    .col.l3.s12
+    .col.l3.offset-l1.s12
       include ../include/banner       
 block footer
   include ../include/footer              
