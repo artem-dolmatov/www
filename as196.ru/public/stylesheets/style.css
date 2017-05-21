@@ -307,3 +307,7 @@ fieldset {
   width: 98%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.20);
 }
+[type='checkbox'] + label.person {
+  font-size: 0.7rem;
+  padding-left: 25px;
+}

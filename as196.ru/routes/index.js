@@ -86,4 +86,7 @@ router.get('/contact', function(req, res){
   res.render('contact', { title: 'Форма заявки' });
 });
 
+router.get('/personal', function(req, res){
+  res.render('personal', { title: 'Согласие на обработку персональных данных' });
+});
 module.exports = router;
