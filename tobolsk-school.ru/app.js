@@ -16,7 +16,7 @@ var schools = require('./routes/schools');
 var app = express();
 
 //Раскоментировать на сервере
-var listener = app.listen(8080, function(){
+var listener = app.listen(8050, function(){
   console.log('Listering on port ' + listener.address().port); //Listering on port
 });
 
