@@ -1,0 +1,14 @@
+extends layout
+
+block nav
+  include ./include/nav
+block content
+  .row.center.thank
+    .col.l8.offset-l2.s10.offset-s1
+      h3
+        |Спасибо что оставили заявку!
+      h4
+        |В ближайшее время с Вами свяжеться менеджер автошколы
+      a.waves-effect.waves-light.btn.blue(href='/') Вернуться на главную страницу
+block footer
+  include ./include/footer
