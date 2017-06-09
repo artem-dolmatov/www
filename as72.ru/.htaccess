@@ -1,0 +1,33 @@
+RewriteEngine on
+AddDefaultCharset utf-8
+#ErrorDocument 404 /index.php
+
+php_flag magic_quotes_gpc 0
+php_flag magic_quotes_runtime 0
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^autoschool/?$ /school/ [L,R=301]
+RewriteRule ^autoschool/([a-z0-9_/-]+)$ /school/$1 [L,R=301]
+
+RewriteRule ^school/?$ school.php [L,QSA]
+RewriteRule ^school/([a-z0-9_/-]+)/?$ school_show.php?alias=$1 [L,QSA]
+
+RewriteRule ^info/?$ info.php [L]
+RewriteRule ^info/([a-z0-9_/-]+)/?$ info.php?alias=$1 [L]
+
+RewriteRule ^news/?$ news.php [L]
+RewriteRule ^news/([0-9]+)/?$ news.php?id=$1 [L]
+
+RewriteRule ^admin/?$ /admin/index.php [L]
+
+#RewriteRule ^([a-z0-9_/-]+)/$ index.php?page=$1 [L]
+#RewriteRule ^([a-z0-9_/-]+)/?$ index.php?page=$1 [L]
+
+# supress php errors
+ php_flag display_startup_errors off
+ php_flag display_errors off
+ php_flag html_errors off
+ php_value docref_root 0
+ php_value docref_ext 0

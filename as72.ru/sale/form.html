@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <title>Тестирование формы</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/templatemo-style.css">
+        <link rel="stylesheet" href="css/button.css">
+        <link rel="stylesheet" href="bootstrapValidator.css"/></p>
+     
+
+                                </head>
+    <body>
+         <div class="site-bg"></div>
+        <div class="site-bg-overlay"></div>
+
+         <div class="container" id="page-content">
+            <div class="row">
+
+             <div class="col-md-8 col-sm-8 content-holder">
+ <div id="messegeResult">
+        <p> Оставьте ваши контакты и наш консультант свяжется с вами </p>
+    </div>
+     <form class="contact-form" method="post" action="" id="formMain" name="formMain">      
+      <input type="text" name="name" placeholder="Ваше Имя..." autofocus required>
+ 
+      <input type="text" name="phone" id="phone" placeholder="Номер телефона..." autofocus required/>
+ 
+       <input type="text" name="mail" id="mail" placeholder="Адрес электронной почты..." required pattern="\S+@[a-z]+.[a-z]+"/>
+                   
+          <div type="button" class="button" id="b" value="Отправить"  onclick="AjaxFormRequest('messegeResult', 'formMain', 'mail.php')" /></div>
+          </form>
+
+                      
+  
+
+    </div>
+    </div>
+    </div>
+    </body>
+   <script src="script.js"></script>
+   <script src="js/min/jquery.maskedinput.min.js"></script>
+   <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+   <script src="bootstrapValidator.js"></script>
+
+  
+
+   

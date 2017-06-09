@@ -1,0 +1,59 @@
+.button {
+    width: 150px;
+    border-radius: 100px;
+    height: 30px;
+    padding: 2px 10px 0;
+    border: 2px solid #1ECD97;      
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+    color: #1ECD97;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, Sans-Serif;
+    font-weight: bold;
+    margin: 10px auto;
+    background-color: white;
+    margin-left: 1px;
+}
+
+.button:hover {
+    background-color: #1ECD97;
+	color: #fff;
+}
+
+.button.load {
+    width: 30px;
+    padding: 7px;
+    border-left-color: #eee;
+    border-top-color: #eee;
+
+    animation:spin 3s linear infinite;
+    /* чтобы не вращалась кнопка, пока еще не круглая */
+    animation-delay: .3s;
+}
+
+.button.success {
+    background: #1ECD97;
+    color: #fff;
+}
+
+.button.error {
+    background: #FB797E;
+    color: #fff;
+    border-color: #FB797E;
+}
+
+.button b {
+     animation: showB .6s ease;
+}
+
+.button.load {
+    background-color: transparent;
+}
+
+@keyframes showB { 
+    0% { transform: scale(.1); },
+    100% { transform: scale(1); } }
+
+@keyframes spin { 100% { transform:rotate(360deg); } }
+
