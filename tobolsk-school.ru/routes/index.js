@@ -59,7 +59,7 @@ router.post('/', function(req, res){
     to: 'tmn-as72@yandex.ru',
     subject: 'Заявка Тобольск',
     html: "Категория: "+req.body.a+" "+req.body.b+" "+req.body.c+" "+req.body.d+" "+req.body.e+"<br /><br />"+
-    "Район: "+req.body.center+" "+req.body.viz+" "+req.body.uralmash+" "+req.body.sort+" "+req.body.kirov+" "+req.body.chkalov+"<br /><br />"+
+    "Район: "+req.body.podgor+" "+req.body.ug+" "+req.body.m79+" "+req.body.m415+" "+req.body.m3+" "+req.body.other+"<br /><br />"+
     "Тип обучения: "+req.body.online+" "+req.body.group+"<br /><br />"+
     "Тип трансмиссии: "+req.body.mkpp+" "+req.body.akpp+"<br /><br />"+
     "Номер телефона: "+req.body.phone
